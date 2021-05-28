@@ -3,17 +3,16 @@
 #include <iostream>
 #include <vector>
 #include <list>
-#include <tuple>
 #include <string>
 #include <fstream>
 using namespace std;
 class RootClass;
 //чтобы не ругались тайпдефы, т.к главный класс описываем позже
-typedef void (RootClass::* TYPE_SIGNAL) (string&);
-// ”казатель на функцию обработчика
+
 typedef void (RootClass::* TYPE_HANDLER) (string);
 // ћекроопределение методов к типу TYPE_SIGNAL и TYPE_HANLDER
-
+typedef void (RootClass::* TYPE_SIGNAL) (string&);
+// ”казатель на функцию обработчика
 
 #define SIGNAL_D(signal_f)(TYPE_SIGNAL)(& signal_f)
 //  #define SIGNAL_D(signal_f)(TYPE_SIGNAL)(& signal_f);
